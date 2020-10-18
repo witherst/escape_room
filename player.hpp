@@ -1,0 +1,43 @@
+/***********************************************************
+ ** Program name: 	escapeRoom
+ ** Author: 		Tim Withers
+ ** Date:			3/16/2019
+ **	Description:	This program simulates an escape room text game.
+ *					There are 6 rooms total. The user always starts in
+ *					room 1 and goes until room 6. Each room has a different
+ *					puzzle for the user to solve. If the user picks the 
+ *					wrong answer for any puzzle, they will die and the game
+ *					is over. After successfully solving room 6's puzzle, the user
+ *					escapes the building and wins the game.
+ ************************************************************/
+#ifndef TWITHERS_PLAYER_HPP
+#define TWITHERS_PLAYER_HPP
+
+#include "container.hpp"
+#include "item.hpp"
+
+class Player
+{
+	private:
+		Container backpack = Container();
+							
+	public:
+		// Constructor(s)
+		Player();
+
+		// Destructor
+		~Player();
+
+		// Getters
+		Container getBP(){ return backpack; }	// Get backpack
+		
+		// Setters
+
+		// Public Functions
+		void printBPitems();
+		void addBPitem(Item);
+		void emptyBP();
+		bool isBPfull();
+};
+
+#endif
